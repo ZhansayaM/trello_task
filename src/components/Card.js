@@ -1,6 +1,7 @@
-import { InputBase, Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Draggable } from "react-beautiful-dnd";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
@@ -8,6 +9,9 @@ const useStyle = makeStyles((theme) => ({
     "&:focus": {
       border: "1px solid #0079BF",
       backgroundColor: "white",
+    },
+    "&:hover": {
+      backgroundColor: "rgba(0,0,0, 0.05)",
     },
     margin: "8px",
     padding: "8px 8px 8px 16px",
@@ -25,19 +29,27 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function Card({ card }) {
+export default function Card({ card, index }) {
   const classes = useStyle();
   return (
-    <div>
-      {/* <InputBase
+    <Draggable draggableId={card.id} index={index}>
+      {(provided) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.dragHandleProps}
+          {...provided.draggableProps}
+        >
+          <Paper className={classes.card}>{card.title}</Paper>
+        </div>
+      )}
+        {/* <InputBase
         defaultvalue="Submit"
           inputProps={{
                 className: classes.card,
               }}
             fullWidth
           /> */}
-      <Paper className={classes.card}>{card.title}</Paper>
-      {/* <Paper className={classes.card}>Submit the task</Paper> */}
-    </div>
+        {/* <Paper className={classes.card}>Submit the task</Paper> */}
+    </Draggable>
   );
 }

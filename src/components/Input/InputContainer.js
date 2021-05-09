@@ -32,6 +32,7 @@ export default function InputContainer({listId, type}) {
       <Collapse in={!open}>
         <Paper
           className={classes.addCard}
+          elevation={0}
           onClick={() => {
             setOpen(!open);
           }}

@@ -7,8 +7,6 @@ import storeAPI from "../../utils/storeAPI";
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
   card: {
-    // margin: theme.spacing(0,1,1,1),
-    // paddingBottom: theme.spacing(4)
     padding: theme.spacing(1, 1, 1, 2),
     margin: theme.spacing(1),
   },
