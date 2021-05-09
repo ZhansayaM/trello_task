@@ -3,7 +3,7 @@ import List from "./components/List/List";
 import store from "./utils/store";
 import StoreAPI from "./utils/storeAPI";
 import { v4 as uniqueID } from "uuid";
-import InputContainer from "./components/Input/InputContainer";
+import InputContainer from "./components/Add/AddList";
 import { makeStyles } from "@material-ui/core/styles";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 

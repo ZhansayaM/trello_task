@@ -1,8 +1,7 @@
-import React, { useState, useContext } from "react";
-import { InputBase, Typography } from "@material-ui/core";
+import React, { useState } from "react";
+import { InputBase} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import storeAPI from '../../utils/storeAPI';
 
 //  Styles for the components
 const useStyle = makeStyles((theme) => ({

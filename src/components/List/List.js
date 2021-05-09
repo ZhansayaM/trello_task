@@ -3,8 +3,8 @@ import { CssBaseline, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Title from "./Title";
 import Card from "../Card";
-import InputContainer from "../Input/InputContainer";
-import { Droppable, Draggable } from "react-beautiful-dnd";
+import InputContainer from "../Add/AddList";
+import { Droppable } from "react-beautiful-dnd";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
