@@ -12,10 +12,7 @@ const useStyle = makeStyles((theme) => ({
     width: "300px",
     backgroundColor: "#EBECF0",
     marginLeft: theme.spacing(1),
-  },
-  cardContainer: {
-      marginTop: theme.spacing(4),
-  },
+  }
 }));
 
 export default function List({ list, index }) {
