@@ -8,25 +8,25 @@ const useStyle = makeStyles((theme) => ({
   addCard: {
     padding: theme.spacing(1, 1, 1, 2),
     margin: theme.spacing(1),
-    background: "transparent",
+    backgroundColor: "#EBECF0",
     boxShadow: "none",
     "&:hover": {
       backgroundColor: "rgba(0,0,0, 0.15)",
     },
   },
   root: {
-    marginTop: theme.spacing(2),
+    width: '300px'
   },
 }));
 
-export default function InputContainer() {
+export default function InputContainer({listId, type}) {
   const classes = useStyle();
   const [open, setOpen] = useState(false);
 
   return (
     <div className={classes.root}>
       <Collapse in={open}>
-        <InputCard setOpen={setOpen} />
+        <InputCard setOpen={setOpen} listId={listId} type={type} />
       </Collapse>
 
       <Collapse in={!open}>
@@ -36,7 +36,7 @@ export default function InputContainer() {
             setOpen(!open);
           }}
         >
-          Add a new card
+          <Typography>{type === 'list' ? 'Add a new list' : '+ Add a new card'}</Typography>
         </Paper>
       </Collapse>
     </div>

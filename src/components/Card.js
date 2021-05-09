@@ -36,7 +36,7 @@ export default function Card({ card }) {
               }}
             fullWidth
           /> */}
-      <Paper className={classes.card}>{card.content}</Paper>
+      <Paper className={classes.card}>{card.title}</Paper>
       {/* <Paper className={classes.card}>Submit the task</Paper> */}
     </div>
   );

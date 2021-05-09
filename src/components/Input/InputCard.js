@@ -1,7 +1,8 @@
 import { IconButton, InputBase, Paper, Button } from "@material-ui/core";
-import React from "react";
+import React, { useContext, useState } from "react";
 import ClearIcon from "@material-ui/icons/Clear";
 import { makeStyles } from "@material-ui/core/styles";
+import storeAPI from "../../utils/storeAPI";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
@@ -23,19 +24,29 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function InputCard({ setOpen }) {
+export default function InputCard({ setOpen, listId, type }) {
   const classes = useStyle();
+  const [cardTitle, setCardTitle] = useState("");
+  const { addMoreCards, addMoreList } = useContext(storeAPI);
   return (
     <div>
       <div>
         <Paper className={classes.card}>
           <InputBase
+            onChange={(e) => {
+              setCardTitle(e.target.value);
+            }}
             multiline
             onBlur={() => {
               setOpen(false);
             }}
             fullWidth
-            placeholder="Enter a title of this card"
+            value={cardTitle}
+            placeholder={
+              type === "list"
+                ? "Enter a list title"
+                : "Enter a title of this card"
+            }
           />
         </Paper>
       </div>
@@ -43,11 +54,19 @@ export default function InputCard({ setOpen }) {
         {/* for the add button and X button, they change the setOpen only if before clicking on them, you've clicked on the inputBase, idk why this happens */}
         <Button
           className={classes.btnAdd}
-          onclick={() => {
-            setOpen(false);
+          onClick={() => {
+            if (type === "list") {
+              addMoreList(cardTitle);
+              setOpen(false);
+              setCardTitle("");
+            } else {
+              addMoreCards(cardTitle, listId);
+              setOpen(false);
+              setCardTitle("");
+            }
           }}
         >
-          Add card
+          {type === "list" ? "Add list" : "Add card"}
         </Button>
         <IconButton
           onclick={() => {
