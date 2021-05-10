@@ -1,8 +1,7 @@
-import { InputBase, Paper, TextField } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
-// import Delete from '@material-ui/icons';
 import DeleteIcon from "@material-ui/icons/Delete";
 
 //Styles for the components
@@ -42,6 +41,7 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Card({ card, index }) {
   const classes = useStyle();
+
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
@@ -50,29 +50,17 @@ export default function Card({ card, index }) {
           {...provided.dragHandleProps}
           {...provided.draggableProps}
         >
-          <Paper
-            className={classes.card}
-            defaultValue={card.title}
-          >
+          <Paper className={classes.card} defaultValue={card.title}>
             {card.title}
             <DeleteIcon
               className={classes.delete}
               onClick={() => {
-                card.title = "";
-                console.log("delete!");
+                console.log("Card id = ", card.id);
               }}
             />
           </Paper>
         </div>
       )}
-      {/* <InputBase
-        defaultvalue="Submit"
-          inputProps={{
-                className: classes.card,
-              }}
-            fullWidth
-          /> */}
-      {/* <Paper className={classes.card}>Submit the task</Paper> */}
     </Draggable>
   );
 }

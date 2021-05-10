@@ -9,12 +9,9 @@ for drag & drop function:
 3. npm start
 _______________________
 
-<b>This app does not consider adaptiveness and edge cases, some of which are:</b>
-1. Creating an empty card/list
-2.
+<b>This app does not consider adaptiveness and edge cases, such as <i>creating an empty card/list</i></b>
 
-<b>Some other comments:</b>
-1. 
+The styles were made using the <i>Material UI</i> dependency.
 
 <b>What you can do:</b>
 1. Create a new list
@@ -25,4 +22,4 @@ _______________________
 1. Edit the cards
 2. Delete the cards
 3. Save items in the localStorage
-4. Save the date of creation and date of last edit for the items
+4. Save the date of creation and date of last edit of the items

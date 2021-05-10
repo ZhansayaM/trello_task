@@ -10,11 +10,10 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 const useStyle = makeStyles((theme) => ({
   root: {
     display: "flex",
-    minHeight: "100vh",
     background: "beige",
   },
   listContainer: {
-    display: 'flex',
+    display: "flex",
   },
 }));
 
@@ -110,13 +109,6 @@ export default function App() {
     <StoreAPI.Provider value={{ addMoreCards, addMoreList }}>
       <div>
         <DragDropContext onDragEnd={onDragEnd}>
-          {/* <div className={classes.root}>
-          {data.listIds.map((listId) => {
-            const list = data.lists[listId];
-            return <List list={list} key={listId} />;
-          })}
-          <InputContainer type="list" />
-        </div> */}
           <Droppable droppableId="app" type="list" direction="horizontal">
             {(provided) => (
               <div

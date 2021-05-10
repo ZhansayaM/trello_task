@@ -12,7 +12,7 @@ const useStyle = makeStyles((theme) => ({
     width: "300px",
     backgroundColor: "#EBECF0",
     marginLeft: theme.spacing(1),
-  }
+  },
 }));
 
 export default function List({ list, index }) {
@@ -31,7 +31,7 @@ export default function List({ list, index }) {
               {...provided.droppableProps}
             >
               {list.cards.map((card, index) => (
-                <Card key={card.id} card={card} index={index}/>
+                <Card key={card.id} card={card} index={index} />
               ))}
               {provided.placeholder}
             </div>

@@ -15,11 +15,11 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   root: {
-    width: '300px'
+    width: "300px",
   },
 }));
 
-export default function InputContainer({listId, type}) {
+export default function InputContainer({ listId, type }) {
   const classes = useStyle();
   const [open, setOpen] = useState(false);
 
@@ -37,7 +37,9 @@ export default function InputContainer({listId, type}) {
             setOpen(!open);
           }}
         >
-          <Typography>{type === 'list' ? 'Add a new list' : '+ Add a new card'}</Typography>
+          <Typography>
+            {type === "list" ? "Add a new list" : "+ Add a new card"}
+          </Typography>
         </Paper>
       </Collapse>
     </div>
