@@ -1,5 +1,5 @@
 # trello_task
-This app was built on top of React Create app (<i></i>npx create-react-app .</i>)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). (<i>npx create-react-app .</i>)
 
 <b>To run this app:</b>
 
@@ -9,14 +9,19 @@ for drag & drop function:
 3. npm start
 _______________________
 
-This app does not consider adaptiveness and edge cases, some of which are:
+<b>This app does not consider adaptiveness and edge cases, some of which are:</b>
 1. Creating an empty card/list
 2.
 
-Some other comments:
-1.
+<b>Some other comments:</b>
+1. 
 
-TODO:
+<b>What you can do:</b>
+1. Create a new list
+2. Create a new card in the list
+3. Edit the name of the list
+
+<b>TODO:</b>
 1. Edit the cards
 2. Delete the cards
 3. Save items in the localStorage
