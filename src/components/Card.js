@@ -1,8 +1,9 @@
-import { Collapse, Paper } from "@material-ui/core";
+import { Collapse, Paper, InputBase } from "@material-ui/core";
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
 import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@material-ui/icons/Edit";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
@@ -14,7 +15,7 @@ const useStyle = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(0,0,0, 0.05)",
     },
-    margin: "8px",
+    margin: "5px",
     justifyContent: "space-between",
     padding: "8px 8px 8px 16px",
     boxShadow:
@@ -43,7 +44,7 @@ export default function Card({ card, index }) {
   const classes = useStyle();
   const [close, setClose] = useState(true);
   return (
-    <Draggable draggableId={card.id} index={index}>
+    <Draggable enableUserSelectHack={false} draggableId={card.id} index={index}>
       {(provided) => (
         <div
           ref={provided.innerRef}
@@ -51,16 +52,24 @@ export default function Card({ card, index }) {
           {...provided.draggableProps}
         >
           <Collapse in={close}>
-          <Paper className={classes.card}>
-            {card.title}
-            <DeleteIcon
-              className={classes.delete}
-              onClick={() => {
-                console.log("Card id = ", card.id);
-                setClose(!close);
+            <InputBase
+              className={classes.card}
+              defaultValue={card.title}
+              onChange={(e) => {
+                card.title = e.target.value;
               }}
-            />
-          </Paper>
+            >
+              <div>
+                <EditIcon className={classes.delete} onClick={() => {}} />
+                <DeleteIcon
+                  className={classes.delete}
+                  onClick={() => {
+                    console.log("Deleted card id = ", card.id);
+                    setClose(!close);
+                  }}
+                />
+              </div>
+            </InputBase>
           </Collapse>
         </div>
       )}
