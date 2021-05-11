@@ -23,3 +23,4 @@ The styles were made using the <i>Material UI</i> dependency.
 1. Delete the cards from the list
 2. Save items in the localStorage
 3. Save the date of creation and date of last edit of the items
+4. Add the description to the card item
