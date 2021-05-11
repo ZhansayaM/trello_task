@@ -1,5 +1,5 @@
-import { Paper } from "@material-ui/core";
-import React from "react";
+import { Collapse, Paper } from "@material-ui/core";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -41,7 +41,7 @@ const useStyle = makeStyles((theme) => ({
 
 export default function Card({ card, index }) {
   const classes = useStyle();
-
+  const [close, setClose] = useState(true);
   return (
     <Draggable draggableId={card.id} index={index}>
       {(provided) => (
@@ -50,15 +50,18 @@ export default function Card({ card, index }) {
           {...provided.dragHandleProps}
           {...provided.draggableProps}
         >
-          <Paper className={classes.card} defaultValue={card.title}>
+          <Collapse in={close}>
+          <Paper className={classes.card}>
             {card.title}
             <DeleteIcon
               className={classes.delete}
               onClick={() => {
                 console.log("Card id = ", card.id);
+                setClose(!close);
               }}
             />
           </Paper>
+          </Collapse>
         </div>
       )}
     </Draggable>

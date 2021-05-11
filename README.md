@@ -4,8 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <b>To run this app:</b>
 
 1. npm install
-for drag & drop function:
-2. npm i react-beautiful-dnd
+2. for drag & drop function:
+npm i react-beautiful-dnd
 3. npm start
 _______________________
 
