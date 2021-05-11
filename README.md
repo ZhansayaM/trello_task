@@ -19,10 +19,9 @@ The styles were made using the <i>Material UI</i> dependency.
 3. Edit the name of the list
 4. Edit the cards
 5. Delete the cards from the list
-6. Save the dates of creation and last edit of the cards and lists
-
+6. Save and show on hover dates of creation and last edit of the cards
 
 <b>TODO:</b>
 1. Save items in the localStorage
 2. Add the description to the card item
-3. Show the dates info when hover
+3. Save changes on press Enter

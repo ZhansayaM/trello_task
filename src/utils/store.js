@@ -25,8 +25,6 @@ const data = {
       id: "list-1",
       title: "To do",
       cards,
-      creationDate: "0",
-      updateDate: "0",
     },
   },
   listIds: ["list-1"],

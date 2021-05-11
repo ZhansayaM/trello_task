@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { ShowChart } from "@material-ui/icons";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
@@ -43,11 +42,17 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  editInfo: {
+    fontSize: "10px",
+    margin: "5px",
+  }
 }));
 
 export default function Card({ card, index }) {
   const classes = useStyle();
   const [close, setClose] = useState(true);
+  const [isShown, setIsShown] = useState(false);
+  
   return (
     <Draggable enableUserSelectHack={false} draggableId={card.id} index={index}>
       {(provided) => (
@@ -66,9 +71,8 @@ export default function Card({ card, index }) {
                   card.updateDate = Date().toLocaleString();
                   console.log(card.updateDate);
                 }}
-                onMouseEnter={() => {
-                  
-                }}
+                onMouseEnter={() => setIsShown(true)}
+                onMouseLeave={() => setIsShown(false)}
               />
               <DeleteIcon
                 className={classes.delete}
@@ -78,6 +82,9 @@ export default function Card({ card, index }) {
                 }}
               />
             </div>
+            {isShown && <div className={classes.editInfo}>
+            <i>The creation date: {card.creationDate}</i> <br />
+            <i>The last edit: {card.updateDate}</i></div>}
           </Collapse>
         </div>
       )}

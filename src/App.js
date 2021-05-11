@@ -28,7 +28,6 @@ export default function App() {
       id: newCardID,
       title,
       creationDate: Date().toLocaleString(),
-      updateDate: Date().toLocaleString(),
     };
     const list = data.lists[listId];
     list.cards = [...list.cards, newCard];
@@ -49,7 +48,6 @@ export default function App() {
       cards: [],
       id: newListId,
       title,
-      creationDate: Date().toLocaleString(),
     };
     const newState = {
       listIds: [...data.listIds, newListId],

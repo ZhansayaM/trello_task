@@ -13,10 +13,15 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: "#EBECF0",
     marginLeft: theme.spacing(1),
   },
+  editInfo: {
+    fontSize: "10px",
+    margin: "5px",
+  },
 }));
 
 export default function List({ list, index }) {
   const classes = useStyle();
+
   return (
     <div>
       <Paper className={classes.root}>
@@ -37,6 +42,7 @@ export default function List({ list, index }) {
             </div>
           )}
         </Droppable>
+
         <InputContainer listId={list.id} />
       </Paper>
     </div>
