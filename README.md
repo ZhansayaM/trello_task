@@ -20,8 +20,8 @@ The styles were made using the <i>Material UI</i> dependency.
 4. Edit the cards
 5. Delete the cards from the list
 6. Save and show on hover dates of creation and last edit of the cards
+7. Save changes in the title of the card/list on press Enter
 
 <b>TODO:</b>
 1. Save items in the localStorage
 2. Add the description to the card item
-3. Save changes on press Enter

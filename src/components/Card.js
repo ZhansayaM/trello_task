@@ -73,6 +73,12 @@ export default function Card({ card, index }) {
                 }}
                 onMouseEnter={() => setIsShown(true)}
                 onMouseLeave={() => setIsShown(false)}
+                onKeyDown={(e)=>{
+                  if (e.key === 'Enter') {
+                    console.log("enter!");
+                    e.target.blur();
+                  }
+                }}
               />
               <DeleteIcon
                 className={classes.delete}

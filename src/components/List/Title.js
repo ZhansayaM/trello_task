@@ -43,6 +43,12 @@ export default function Title({ title, listId }) {
             className: classes.input,
           }}
           fullWidth
+          onKeyDown={(e)=>{
+            if (e.key === 'Enter') {
+              console.log("enter!");
+              e.target.blur();
+            }
+          }}
         />
         {/* Adding a 'more' icon (3 dots) */}
         <MoreHorizIcon />
