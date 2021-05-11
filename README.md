@@ -18,9 +18,9 @@ The styles were made using the <i>Material UI</i> dependency.
 2. Create a new card in the list
 3. Edit the name of the list
 4. Edit the cards
+5. Delete the cards from the list
 
 <b>TODO:</b>
-1. Delete the cards from the list
-2. Save items in the localStorage
-3. Save the date of creation and date of last edit of the items
-4. Add the description to the card item
+1. Save items in the localStorage
+2. Save the date of creation and date of last edit of the items
+3. Add the description to the card item
