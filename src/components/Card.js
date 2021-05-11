@@ -1,9 +1,9 @@
-import { Collapse, Paper, InputBase } from "@material-ui/core";
+import { Collapse, InputBase } from "@material-ui/core";
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Draggable } from "react-beautiful-dnd";
 import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
+import { ShowChart } from "@material-ui/icons";
 
 //Styles for the components
 const useStyle = makeStyles((theme) => ({
@@ -63,6 +63,11 @@ export default function Card({ card, index }) {
                 defaultValue={card.title}
                 onChange={(e) => {
                   card.title = e.target.value;
+                  card.updateDate = Date().toLocaleString();
+                  console.log(card.updateDate);
+                }}
+                onMouseEnter={() => {
+                  
                 }}
               />
               <DeleteIcon
